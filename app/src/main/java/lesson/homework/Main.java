@@ -7,6 +7,5 @@ public class Main {
         System.out.println("Hello java group 49");
 
 
-
     }
 }
