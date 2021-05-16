@@ -1,8 +1,13 @@
 package lesson.homework;
 
+import lesson.homework.callCallback.MessageReceiver;
+import lesson.homework.callCallback.MessageSender;
+
 public class Main {
     public static void main(String[] args) {
-        //write your code here
-        System.out.println("Hello java group 49");
+        MessageReceiver receiver=new MessageReceiver();
+        MessageSender sender=new MessageSender();
+        sender.setListener(receiver);
+        sender.sendMessage("uxarkeci message");
     }
 }
