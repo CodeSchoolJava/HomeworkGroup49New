@@ -1,4 +1,4 @@
-package lesson.homework.sportTypes;
+package lesson.homework.animal;
 
 public class Cat extends Animal implements Pet {
     String name;
@@ -6,12 +6,13 @@ public class Cat extends Animal implements Pet {
         super(legs=4);
         this.name=name;
     }
-    //public Cat(){
-    //}
+   // public Cat(){
+    //  this(" ")  ;
+   // }
 
     @Override
     public String getName() {
-        return null;
+        return name;
     }
 
     @Override

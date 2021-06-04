@@ -1,4 +1,4 @@
-package lesson.homework.sportTypes;
+package lesson.homework.animal;
 
 public abstract class Animal {
     protected int legs;

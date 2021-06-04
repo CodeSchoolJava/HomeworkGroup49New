@@ -1,7 +1,8 @@
-package lesson.homework.sportTypes;
+package lesson.homework.animal;
 
 public class Spider extends Animal{
     public Spider(int legs){
+
         super(legs=8);
     }
 

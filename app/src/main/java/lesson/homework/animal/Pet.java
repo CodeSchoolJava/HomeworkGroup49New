@@ -1,4 +1,4 @@
-package lesson.homework.sportTypes;
+package lesson.homework.animal;
 
 public interface Pet {
     public String getName();
