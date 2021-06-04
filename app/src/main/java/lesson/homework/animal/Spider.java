@@ -1,9 +1,9 @@
 package lesson.homework.animal;
 
 public class Spider extends Animal{
-    public Spider(int legs){
+    public Spider(){
 
-        super(legs=8);
+        super(8);
     }
 
     @Override

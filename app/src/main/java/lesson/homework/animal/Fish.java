@@ -2,8 +2,8 @@ package lesson.homework.animal;
 
 public class Fish extends Animal {
 
-    public Fish(int legs) {
-        super(legs=0);
+    public Fish() {
+        super(0);
 
     }
 
