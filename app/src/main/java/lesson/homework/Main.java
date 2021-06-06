@@ -11,8 +11,8 @@ import lesson.homework.arevturq.Shop;
 
 public class Main {
     public static void main(String[] args) {
-        Shop shop =new Shop(new Seller("Varuj","HAK",23, GenderType.MALE,5000);
-        Customer customer = new Customer("Arsh","BAG",30, GenderType.MALE, 50000);
+        Shop shop =new Shop(new Seller("Varuj","HAK",23, GenderType.MALE),6999999);
+        Customer customer = new Customer("Arsh","BAG",30, GenderType.MALE,687900);
         customer.addProduct(new Products(1000));
         customer.addProduct(new Products(2000));
         customer.addProduct(new Products(3000));

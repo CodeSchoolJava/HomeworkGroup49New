@@ -7,7 +7,7 @@ public class Customer extends Person implements OnSellListener {
     private double balance;
     private List<Products> bucket;
 
-    public Customer(String name, String surName, int age, GenderType gender) {
+    public Customer(String name, String surName, int age, GenderType gender,double balance) {
         super(name, surName, age, gender);
         this.balance = balance;
     }
