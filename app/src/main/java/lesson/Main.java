@@ -16,9 +16,13 @@ public class Main {
 //            System.out.println("Register your Birthday" + " ::::: " + n);
 //        }
         MyArrayList<Integer> myArrayList = new MyArrayList<>(10);
+
         myArrayList.add(1);
-        myArrayList.add(null);
+        myArrayList.add(1);
+        myArrayList.add(1);
+
         System.out.println(myArrayList.size());
+        System.out.println(myArrayList);
 
     }
 }

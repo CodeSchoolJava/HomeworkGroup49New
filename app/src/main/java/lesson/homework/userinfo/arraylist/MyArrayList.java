@@ -1,5 +1,6 @@
 package lesson.homework.userinfo.arraylist;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class MyArrayList<T> implements MyList<T> {
@@ -65,6 +66,22 @@ public class MyArrayList<T> implements MyList<T> {
     }
 
     @Override
+    public T add(int index, T element) {
+        try {
+            if (index < 0 || index >= size()) {
+                throw new ArrayIndexOutOfBoundsException();
+            }
+        } catch (ArrayIndexOutOfBoundsException a) {
+            System.out.println("Can't set your element : " + a);
+            return null;
+        }
+        for (int i = array.length; i > index; i--) {
+
+        }
+        return (T) array[index];
+    }
+
+    @Override
     public T set(int index, T element) {
         try {
             if (index < 0 || index >= size()) {
@@ -72,8 +89,14 @@ public class MyArrayList<T> implements MyList<T> {
             }
         } catch (ArrayIndexOutOfBoundsException a) {
             System.out.println("Can't set your element : " + a);
+            System.exit(1);
         }
-        return null;
+        for (int i = 0; i < array.length; i++) {
+            if (i == index) {
+                array[i] = element;
+            }
+        }
+        return element;
     }
 
     @Override
@@ -84,13 +107,22 @@ public class MyArrayList<T> implements MyList<T> {
             }
         } catch (ArrayIndexOutOfBoundsException a) {
             System.out.println("Can't set your element : " + a);
+            return null;
         }
-        for (int i = 0; i < array.length; i++) {
-            if (i == index) {
-                return (T) array[i];
-            }
-        }
-        return null;
+
+        return (T) array[index];
+    }
+
+    @Override
+    public void remove(int index) {
+        array[index] = null;
+    }
+
+    @Override
+    public void clear() {
+        Arrays.fill(array, null);
+        array = new Object[5];
+        count = 0;
     }
 
     @Override
