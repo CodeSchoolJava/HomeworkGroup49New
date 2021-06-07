@@ -1,6 +1,5 @@
-package lesson.homework.userinfo.arraylist;
+package lesson.homework.arraylist;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class MyArrayList<T> implements MyList<T> {
@@ -76,9 +75,12 @@ public class MyArrayList<T> implements MyList<T> {
             return null;
         }
         for (int i = array.length; i > index; i--) {
-
+            if (array[i - 1] != null) {
+                array[i] = array[i - 1];
+            }
         }
-        return (T) array[index];
+        array[index] = element;
+        return element;
     }
 
     @Override
@@ -89,7 +91,7 @@ public class MyArrayList<T> implements MyList<T> {
             }
         } catch (ArrayIndexOutOfBoundsException a) {
             System.out.println("Can't set your element : " + a);
-            System.exit(1);
+            return null;
         }
         for (int i = 0; i < array.length; i++) {
             if (i == index) {
@@ -106,7 +108,7 @@ public class MyArrayList<T> implements MyList<T> {
                 throw new ArrayIndexOutOfBoundsException();
             }
         } catch (ArrayIndexOutOfBoundsException a) {
-            System.out.println("Can't set your element : " + a);
+            System.out.println("Can't get your element : " + a);
             return null;
         }
 

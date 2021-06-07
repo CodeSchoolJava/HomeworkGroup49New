@@ -1,4 +1,4 @@
-package lesson.homework.userinfo.arraylist;
+package lesson.homework.arraylist;
 
 public interface MyList<T> {
     int size();

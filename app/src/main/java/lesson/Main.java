@@ -1,6 +1,6 @@
 package lesson;
 
-import lesson.homework.userinfo.arraylist.MyArrayList;
+import lesson.homework.arraylist.MyArrayList;
 
 public class Main {
     public static void main(String[] args) {
@@ -16,11 +16,15 @@ public class Main {
 //            System.out.println("Register your Birthday" + " ::::: " + n);
 //        }
         MyArrayList<Integer> myArrayList = new MyArrayList<>(10);
-
+        myArrayList.add(0);
         myArrayList.add(1);
-        myArrayList.add(1);
-        myArrayList.add(1);
-
+        myArrayList.add(2);
+        myArrayList.add(3);
+        myArrayList.add(1, 6);
+        myArrayList.set(2, 5);
+        myArrayList.remove(3);
+        System.out.println(myArrayList.get(2));
+        System.out.println(myArrayList.isEmpty());
         System.out.println(myArrayList.size());
         System.out.println(myArrayList);
 
