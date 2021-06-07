@@ -20,11 +20,11 @@ public class Main {
         myArrayList.add(1);
         myArrayList.add(2);
         myArrayList.add(3);
-        myArrayList.add(1, 6);
-        myArrayList.set(2, 5);
-        System.out.println(myArrayList.get(2));
-        System.out.println(myArrayList.isEmpty());
-        System.out.println(myArrayList.size());
+        myArrayList.add(2, 6);
+        myArrayList.set(1, 5);
+        System.out.println("Get element : " + myArrayList.get(2));
+        System.out.println("Is array empty ? "+myArrayList.isEmpty());
+        System.out.println("Array size : " + myArrayList.size());
         System.out.println(myArrayList);
 
     }

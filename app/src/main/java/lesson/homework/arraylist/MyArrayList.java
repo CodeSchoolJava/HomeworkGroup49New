@@ -61,52 +61,38 @@ public class MyArrayList<T> implements MyList<T> {
     }
 
     @Override
-    public T add(int index, T element) {
-        try {
-            if (index < 0 || index >= size()) {
-                throw new ArrayIndexOutOfBoundsException();
+    public void add(int index, T element) {
+        if ((index < 0 || index >= size())) {
+            excOutOfIndex(index);
+        } else {
+            for (int i = array.length - 1; i > index; i--) {
+                if (array[i - 1] != null) {
+                    array[i] = array[i - 1];
+                }
             }
-        } catch (ArrayIndexOutOfBoundsException a) {
-            System.out.println("Can't set your element : " + a);
-            return null;
+            array[index] = element;
+            count++;
         }
-        for (int i = array.length; i > index; i--) {
-            if (array[i - 1] != null) {
-                array[i] = array[i - 1];
-            }
-        }
-        array[index] = element;
-        count++;
-        return element;
     }
 
+
     @Override
-    public T set(int index, T element) {
-        try {
-            if (index < 0 || index >= size()) {
-                throw new ArrayIndexOutOfBoundsException();
-            }
-        } catch (ArrayIndexOutOfBoundsException a) {
-            System.out.println("Can't set your element : " + a);
-            return null;
-        }
-        for (int i = 0; i < array.length; i++) {
-            if (i == index) {
-                array[i] = element;
+    public void set(int index, T element) {
+        if (index < 0 || index >= size()) {
+            excOutOfIndex(index);
+        } else {
+            for (int i = 0; i < array.length; i++) {
+                if (i == index) {
+                    array[i] = element;
+                }
             }
         }
-        return element;
     }
 
     @Override
     public T get(int index) {
-        try {
-            if (index < 0 || index >= size()) {
-                throw new ArrayIndexOutOfBoundsException();
-            }
-        } catch (ArrayIndexOutOfBoundsException a) {
-            System.out.println("Can't get your element : " + a);
-            return null;
+        if (index < 0 || index >= size()) {
+            excOutOfIndex(index);
         }
 
         return (T) array[index];
@@ -123,6 +109,15 @@ public class MyArrayList<T> implements MyList<T> {
         array = new Object[5];
         count = 0;
     }
+
+    private void excOutOfIndex(int index) {
+        try {
+            throw new ArrayIndexOutOfBoundsException();
+        } catch (ArrayIndexOutOfBoundsException a) {
+            System.out.println("Can't do the action : " + a);
+        }
+    }
+
 
     @Override
     public String toString() {
