@@ -50,16 +50,12 @@ public class MyArrayList<T> implements MyList<T> {
     public void add(T element) {
         for (int i = 0; i < array.length; i++) {
             if (array[i] == null) {
-                if (i < array.length - 5) {
-                    array[i] = element;
-                    count++;
-                    break;
-                } else {
-                    array[i] = element;
+                if (i >= array.length - 5) {
                     enlargeArray();
-                    count++;
-                    break;
                 }
+                array[i] = element;
+                count++;
+                break;
             }
         }
     }
