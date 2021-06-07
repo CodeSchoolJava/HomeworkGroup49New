@@ -23,7 +23,7 @@ public class Main {
         myArrayList.add(2, 6);
         myArrayList.set(1, 5);
         System.out.println("Get element : " + myArrayList.get(2));
-        System.out.println("Is array empty ? "+myArrayList.isEmpty());
+        System.out.println("Is array empty ? " + myArrayList.isEmpty());
         System.out.println("Array size : " + myArrayList.size());
         System.out.println(myArrayList);
 
