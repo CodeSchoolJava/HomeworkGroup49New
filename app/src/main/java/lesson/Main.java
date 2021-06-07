@@ -22,7 +22,6 @@ public class Main {
         myArrayList.add(3);
         myArrayList.add(1, 6);
         myArrayList.set(2, 5);
-        myArrayList.remove(3);
         System.out.println(myArrayList.get(2));
         System.out.println(myArrayList.isEmpty());
         System.out.println(myArrayList.size());

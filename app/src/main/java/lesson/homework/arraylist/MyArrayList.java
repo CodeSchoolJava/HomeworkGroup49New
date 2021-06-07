@@ -80,6 +80,7 @@ public class MyArrayList<T> implements MyList<T> {
             }
         }
         array[index] = element;
+        count++;
         return element;
     }
 
