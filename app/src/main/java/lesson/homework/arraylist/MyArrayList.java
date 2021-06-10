@@ -7,10 +7,8 @@ public class MyArrayList<T> implements MyList<T> {
     private int count;
 
     public MyArrayList(int arrayLen) {
-        Object[] currentArr = new Object[arrayLen];
         if (arrayLen > 0) {
-            array = currentArr;
-
+            array = new Object[arrayLen];
         } else {
             System.out.println("Array length can't be minus");
         }
