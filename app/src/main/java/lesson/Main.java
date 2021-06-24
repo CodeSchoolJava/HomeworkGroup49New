@@ -21,6 +21,7 @@ public class Main {
         myArrayList.add(2);
         myArrayList.add(3);
         myArrayList.add(2, 6);
+        myArrayList.remove(2);
         myArrayList.set(1, 5);
         System.out.println("Get element : " + myArrayList.get(2));
         System.out.println("Is array empty ? " + myArrayList.isEmpty());

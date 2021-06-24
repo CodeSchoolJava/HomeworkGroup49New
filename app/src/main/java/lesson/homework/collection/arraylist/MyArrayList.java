@@ -98,7 +98,12 @@ public class MyArrayList<T> implements MyList<T> {
 
     @Override
     public void remove(int index) {
-        array[index] = null;
+        for (int i = index; i < array.length; i++) {
+            if (array[i] != null) {
+                array[i] = array[i + 1];
+            }
+        }
+        count--;
     }
 
     @Override
