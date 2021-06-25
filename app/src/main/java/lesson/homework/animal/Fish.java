@@ -8,17 +8,19 @@ public class Fish extends Animal {
     }
 
     @Override
-    public void walks(int legs) {
+    public void walks() {
         System.out.println("Fish can't walk, because they don't have legs.");
     }
 
     @Override
-    public void eat() {
+    public void eat()
+    {
         System.out.println("Fish prefer to eat worms.");
     }
 
     @Override
     public String toString() {
+
         return super.toString();
     }
 }

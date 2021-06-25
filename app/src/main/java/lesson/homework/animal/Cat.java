@@ -7,12 +7,15 @@ public class Cat extends Animal implements Pet {
         this.name=name;
     }
    public Cat(){
-    this(" ")  ;
+
+        this(" ")  ;
     }
 
     @Override
     public String getName() {
+
         return name;
+
     }
 
     @Override
@@ -23,12 +26,16 @@ public class Cat extends Animal implements Pet {
 
     @Override
     public void play() {
+
         System.out.println("The cat "+name+" plays with ball.");
+
     }
 
     @Override
     public void eat() {
+
         System.out.println("The cat "+name+" loves to eat salmon.");
+
     }
 
     @Override
