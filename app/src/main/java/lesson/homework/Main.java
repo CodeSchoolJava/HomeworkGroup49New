@@ -1,5 +1,8 @@
 package lesson.homework;
 
+import lesson.homework.userinfo.Registration;
+import lesson.homework.userinfo.UserInfo;
+
 import lesson.classwork.MyRunable;
 import lesson.classwork.MyThread;
 
@@ -34,5 +37,15 @@ public class Main {
         thread1.start();
         System.out.println("Thread2");
         thread2.start();
+        Registration user=new Registration();
+        user.setName("Ester");
+        user.setSurName("Mnacakanyan");
+        UserInfo userInfo=UserInfo.getInstance();
+        try {
+            System.out.println(userInfo.getName()+" "+userInfo.getSurName()+" "+userInfo.getBirthDay().intern());
+        } catch (NullPointerException e) {
+            System.out.println(e.getMessage());;
+        }
+        System.out.println(userInfo.getName());
     }
 }
