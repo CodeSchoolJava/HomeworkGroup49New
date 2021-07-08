@@ -6,7 +6,8 @@ import java.util.Scanner;
 import lesson.homework.boxing.boxers.CreateBoxer;
 import lesson.homework.boxing.boxers.OurBoxersCreator;
 
-public class Fight implements Runnable {
+public class Fight {
+
     private static int chooseOpponentBoxer;
     private MyBoxerFight myBoxerFight = new MyBoxerFight();
     private OpponentBoxerFight opponentBoxerFight = new OpponentBoxerFight();
@@ -16,7 +17,6 @@ public class Fight implements Runnable {
     private Scanner scanner = new Scanner(System.in);
     private OurBoxersCreator ourBoxers;
     private CreateBoxer myBoxer;
-
 
     public Fight(OurBoxersCreator ourBoxers, CreateBoxer myBoxer) {
         this.ourBoxers = ourBoxers;
@@ -38,16 +38,15 @@ public class Fight implements Runnable {
                 return 4;
             case 5:
                 return 5;
+            case 0:
+                return 0;
         }
         return 0;
     }
 
-    public void beginMatch() {
+    public int beginMatch() {
 
         switch (chooseOpponentBoxer()) {
-            case 0:
-                System.out.println("You don't choose a opponent boxer");
-                break;
             case 1:
                 ourBoxers.opponentBoxerDetails1();
                 System.out.println(OurBoxersCreator.getBoxer1() + " \n" + " \n");
@@ -55,38 +54,39 @@ public class Fight implements Runnable {
                 System.out.print("          VS         " + " \n" + " \n");
                 System.out.println(CreateBoxer.getMyBoxer());
 
-                break;
+                return 1;
             case 2:
                 ourBoxers.opponentBoxerDetails2();
                 System.out.println(OurBoxersCreator.getBoxer2() + " \n" + " \n");
                 System.out.print("          VS         " + " \n" + " \n");
                 System.out.println(CreateBoxer.getMyBoxer());
 
-                break;
+                return 2;
             case 3:
                 ourBoxers.opponentBoxerDetails3();
                 System.out.println(OurBoxersCreator.getBoxer3() + " \n" + " \n");
                 System.out.print("          VS         " + " \n" + " \n");
                 System.out.println(CreateBoxer.getMyBoxer());
 
-                break;
+                return 3;
             case 4:
                 ourBoxers.opponentBoxerDetails4();
                 System.out.println(OurBoxersCreator.getBoxer4() + " \n" + " \n");
                 System.out.print("          VS         " + " \n" + " \n");
                 System.out.println(CreateBoxer.getMyBoxer());
 
-                break;
+                return 4;
             case 5:
                 ourBoxers.opponentBoxerDetails5();
                 System.out.println(OurBoxersCreator.getBoxer5() + " \n" + " \n");
                 System.out.print("          VS         " + " \n" + " \n");
                 System.out.println(CreateBoxer.getMyBoxer());
-                break;
-            case 6:
-                break;
+                return 5;
+            case 0:
 
+                return 0;
         }
+        return 0;
     }
 
     private void roundTime() {
@@ -101,14 +101,19 @@ public class Fight implements Runnable {
         }
     }
 
-    public void fight() {
-        beginMatch();
-        roundTime();
-        System.out.println("\n" + "------Match Begins-------");
-        System.out.println("----------FIGHT----------");
-        thread1.start();
-        thread2.start();
-        System.out.println(judge());
+    public void fight(Menu menu) {
+        if (beginMatch() == 0) {
+            System.out.println("-You don't want fight-");
+        } else {
+            roundTime();
+            System.out.println("\n" + "------Match Begins-------");
+            System.out.println("----------FIGHT----------");
+            thread1.start();
+            thread2.start();
+            System.out.println(judge());
+        }
+
+        menu.firstPage();
     }
 
     public String judge() {
@@ -127,10 +132,4 @@ public class Fight implements Runnable {
     public static int getChooseOpponentBoxer() {
         return chooseOpponentBoxer;
     }
-
-    @Override
-    public void run() {
-        fight();
-    }
 }
-

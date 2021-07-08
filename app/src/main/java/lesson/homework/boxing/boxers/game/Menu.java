@@ -14,7 +14,7 @@ public class Menu {
     private TrainingRoom trainingRoom = new TrainingRoom();
     private OurBoxersCreator ourBoxers = new OurBoxersCreator();
     private Fight fight = new Fight(ourBoxers, myBoxerCreator);
-    private Thread thread = new Thread(fight);
+
 
     public void appearance() {
 
@@ -63,8 +63,7 @@ public class Menu {
                         int fightChoose = scanner.nextInt();
                         switch (fightChoose) {
                             case 1:
-                                fight.fight();
-                                firstPage();
+                                fight.fight(new Menu());
                                 break;
                             case 2:
                                 firstPage();
@@ -75,8 +74,8 @@ public class Menu {
                         firstPage();
                     }
                 } else {
-                    fight.fight();
-                    firstPage();
+                    fight.fight(new Menu());
+
                 }
                 break;
             case 3:
